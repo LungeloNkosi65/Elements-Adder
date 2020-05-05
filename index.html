@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <base href="">
+        <script src="./assets/custom-home-element.js"></script>
+    </head>
+    <body>
+        <div>
+            First Value <input type="number" placeholder="Enter value" id="myInput1">
+            <br>
+            Second Value <input type="number" placeholder="Enter value "id="myInput2">
+            <br>
+            <button type="button" onclick="getInputValue();">Add</button>
+            <home-custom id="elementid"></home-custom>
+        
+          </div>
+        
+        <script src="" async defer></script>
+        <script>
+            const elementemitter=document.querySelector('home-custom');
+            elementemitter.addEventListener('action',(event)=>{
+             console.log(`"action": emitted:${event.detail}`)
+           });
+          function getInputValue()
+            {
+             document.getElementById('elementid').setAttribute("firstvalue",getTextBoxValue('myInput1'))
+             document.getElementById('elementid').setAttribute("secondvalue",getTextBoxValue('myInput2'))
+             alert('sum is '+((getTextBoxValue('myInput1')*1)+(getTextBoxValue('myInput2')*1)));
+            }
+       
+               function getTextBoxValue(textBoxId)
+            {
+                return document.getElementById(textBoxId).value;
+            }
+         </script>
+    </body>
+</html>
